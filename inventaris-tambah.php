@@ -50,7 +50,7 @@
                 echo "<script>
                     setTimeout(function() {
                         swal({
-                            title: 'Sukses!!',
+                            title: 'Uyeah!!',
                             text: 'Berhasil Menambahkan',
                             type: 'success'
                         }, function() {
@@ -62,7 +62,7 @@
                 echo "<script>
                     setTimeout(function() {
                         swal({
-                            title: 'Gagal!!!',
+                            title: 'Tetot!!',
                             text: 'Hilangkan Tanda Petik di Nama Pasien',
                             type: 'error'
                         }, function() {

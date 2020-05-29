@@ -15,7 +15,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
-            <li><a href="index"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li><a href="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-plus"></i> Inventaris <b class="caret"></b></a>

@@ -106,10 +106,29 @@
               WHERE kode_registrasi='$kode_registrasi'");
             // mengalihkan halaman kembali ke index.php
                 if($edit){
-                echo "<script>alert('Berhasil Mengubah!!!');
-                      document.location='inventaris-detail?id=$kode_registrasi'</script>";
+                echo "<script>
+                    setTimeout(function() {
+                        swal({
+                            title: 'Uyeah!!',
+                            text: 'Berhasil Mengubah',
+                            type: 'success'
+                        }, function() {
+                            window.location = 'inventaris-detail?id=$kode_registrasi';
+                        });
+                    }, 10);
+                </script>";
                 }else{
-                echo "<script>alert('Gagal Mendaftar! Hilangkan Tanda Petik Pada Nama Pasien!');document.location='inventaris-edit?id=$kode_registrasi'</script>";
+                echo "<script>
+                    setTimeout(function() {
+                        swal({
+                            title: 'Tetot!!',
+                            text: 'Gagal Mengubah',
+                            type: 'error'
+                        }, function() {
+                            window.location = 'inventaris-detail?id=$kode_registrasi';
+                        });
+                    }, 10);
+                </script>";
                   }
           }
         ?>
