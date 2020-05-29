@@ -21,6 +21,8 @@
             <?php
               if(isset($_POST['submit'])){
                 include '../koneksi.php';
+                date_default_timezone_set("Asia/Jakarta");
+                $tgl_sekarang=date('Y-m-d');
                 $a = mysqli_query($koneksi,
                   "SELECT MAX(kode_registrasi) AS max
                   FROM inventaris;");
@@ -36,7 +38,7 @@
                 $kondisi            = '1';
                 $status             = $_POST['status'];
                 $keterangan         = $_POST['keterangan'];
-                $nomor_inventaris   = $kode_jenis.'/'.$tanggal_pengadaan.'/'.$kode_registrasi;
+                $nomor_inventaris   = $kode_jenis.'/'.$tgl_sekarang.'/'.$kode_registrasi;
 
                 $error=array();
                 if (empty($nama_barang)){

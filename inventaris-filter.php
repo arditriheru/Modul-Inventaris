@@ -30,7 +30,7 @@
                     $data = mysqli_query($koneksi,
                       "SELECT * FROM inventaris_ruangan ORDER BY nama_ruangan ASC;");
                     while($d = mysqli_fetch_array($data)){
-                    echo "<option value='".$d['kode_ruangan']."'>".$d['nama_ruangan']."</option>";
+                    echo "<option value='".$d['kode_ruangan']."'>"."(".$d['kode_ruangan'].")"." - ".$d['nama_ruangan']."</option>";
                     }
                   ?>
                 </select>

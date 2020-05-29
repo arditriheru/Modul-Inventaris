@@ -24,22 +24,8 @@
                 <li><a href="inventaris-tambah">Tambah</a></li>
               </ul>
             </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-plus"></i> Jenis <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="inventaris-filter">Lihat</a></li>
-                <li><a href="inventaris-tambah">Tambah</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-plus"></i> Ruangan <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="inventaris-filter">Lihat</a></li>
-                <li><a href="inventaris-tambah">Tambah</a></li>
-              </ul>
-            </li>
+            <li><a href="jenis-tambah"><i class="fa fa-tag"></i> Jenis</a></li>
+            <li><a href="ruangan-tambah"><i class="fa fa-home"></i> Ruangan</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right navbar-user">
             <li class="dropdown user-dropdown">

@@ -22,8 +22,8 @@
           include '../koneksi.php';
           $data = mysqli_query($koneksi,
             "SELECT *, inventaris_jenis.nama_jenis, inventaris_ruangan.nama_ruangan,
-            IF (inventaris.kondisi='1', 'Baik', 'Rusak') AS kondisi,
-            IF (inventaris.status='1', 'Baru', 'Bekas') AS status
+            IF (inventaris.kondisi='0', 'Rusak', 'Baik') AS ifkondisi,
+            IF (inventaris.status='0', 'Bekas', 'Baru') AS ifstatus
             FROM inventaris, inventaris_jenis, inventaris_ruangan
             WHERE inventaris.kode_jenis=inventaris_jenis.kode_jenis
             AND inventaris.kode_ruangan=inventaris_ruangan.kode_ruangan
@@ -162,28 +162,25 @@
               <div class="form-group">
                 <label>Kondisi</label>
                 <select class="form-control" type="text" name="kondisi">
-                  <option selected><?php echo $d['kondisi']; ?></option>
+                  <option value='<?php echo $d['kondisi']; ?>'selected><?php echo $d['ifkondisi']; ?></option>
                   <option value='1'>Baik</option>
                   <option value='0'>Rusak</option>
                 </select>
               </div>
               <div class="form-group">
                 <label>Status</label>
-                <select class="form-control" type="text" name="status">
-                  <option selected><?php echo $d['status']; ?></option>
-                  <option value='1'>Baru</option>
-                  <option value='0'>Bekas</option>
-                </select>
+                <input class="form-control" type="text" name="tanggal_pengadaan"
+                value="<?php echo $d['ifstatus']; ?>" readonly>
               </div>
               <div class="form-group">
                 <label>Kalibrasi</label>
                 <input class="form-control" type="date" name="tanggal_kalibrasi"
-                value="<?php echo format_kalibrasi($tanggal_kalibrasi); ?>"></input>
+                value='<?php echo $d['tanggal_kalibrasi']; ?>'></input>
               </div>
               <div class="form-group">
                 <label>Kalibrasi Ulang</label>
                 <input class="form-control" type="date" name="kalibrasi_ulang"
-                value="<?php echo format_rekalibrasi($kalibrasi_ulang); ?>"></input>
+                value='<?php echo $d['kalibrasi_ulang']; ?>'></input>
               </div>
               <div class="form-group">
                 <label>Keterangan</label>
