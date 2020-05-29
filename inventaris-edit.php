@@ -160,7 +160,7 @@
                 </select>
               </div>
               <div class="form-group">
-                <label>Lokasi</label>
+                <label>Ruangan</label>
                 <select class="form-control" type="text" name="kode_ruangan">
                   <option value='<?php echo $d['kode_ruangan']; ?>'selected><?php echo $d['nama_ruangan']; ?></option>
                   <?php 

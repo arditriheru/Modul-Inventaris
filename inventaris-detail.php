@@ -205,7 +205,7 @@ $nomor_inventaris = $_POST['nomor_inventaris'];
                   <td><?php echo $nama_jenis; ?></td>
               </tr>
               <tr>
-                  <td><b>Lokasi</b></td>
+                  <td><b>Ruangan</b></td>
                   <td><?php echo $nama_ruangan; ?></td>
               </tr>
               <tr>
