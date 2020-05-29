@@ -8,14 +8,7 @@
       <div id="page-wrapper">
         <div class="row">
           <div class="col-lg-12">
-            <?php 
-              include '../koneksi.php';
-              $a = mysqli_query($koneksi,
-                "SELECT COUNT(kode_registrasi) AS total
-                FROM inventaris;");
-              while($b = mysqli_fetch_array($a)){
-            ?>
-            <h1>Total <small> <?php echo $b['total'];}?> Barang</small></h1>
+            <h1>Daftar <small> Inventaris</small></h1>
             <ol class="breadcrumb">
               <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
               <li class="active"><i class="fa fa-search"></i> Cari</li>
