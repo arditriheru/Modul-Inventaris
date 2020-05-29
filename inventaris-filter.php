@@ -38,7 +38,15 @@
               <button type="submit" class="btn btn-success">Cari</button>
             </div>
             </form>
-                </div>
+            <form method="post" action="inventaris-detail" role="form">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label>Nomor Inventaris</label>
+                <input class="form-control" type="text" name="nomor_inventaris" placeholder="Masukkan..">
+              </div><button type="submit" class="btn btn-success">Cari</button>
+            </div>
+          </form>
+            </div>
           </div>
         </div><!-- /.row -->
       </div><br><br><?php include "../copyright.php";?><br><br><!-- /#page-wrapper -->

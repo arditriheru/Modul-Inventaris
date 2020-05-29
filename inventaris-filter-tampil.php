@@ -39,7 +39,7 @@
                     <th><center>Nomor Inventaris</th>
                     <th><center>Nama Barang</th>
                     <th><center>Jenis</th>
-                    <th><center>Ruangan</th>
+                    <th><center>Lokasi</th>
                     <th><center>Pengadaan</th>
                     <th><center>Kondisi</th>
                     <th><center>Action</th>

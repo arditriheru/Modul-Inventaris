@@ -96,7 +96,7 @@
                 </select>
               </div>
               <div class="form-group">
-                <label>Ruangan</label>
+                <label>Lokasi</label>
                 <select class="form-control" type="text" name="kode_ruangan" required="">
                 <p style="color:red;"><?php echo ($error['kode_ruangan']) ? $error['kode_ruangan'] : ''; ?></p>
                   <option disabled selected>Pilih</option>
