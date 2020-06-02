@@ -222,11 +222,21 @@ $nomor_inventaris = $_POST['nomor_inventaris'];
               </tr>
               <tr>
                   <td><b>Kalibrasi</b></td>
-                  <td><?php echo format_kalibrasi($tanggal_kalibrasi); ?></td>
+                  <td><?php if($tanggal_kalibrasi=='0000-00-00'){
+                    echo '-';
+                    }else{
+                    echo format_kalibrasi($tanggal_kalibrasi);
+                    } ?>
+                  </td>
               </tr>
               <tr>
                   <td><b>Rekalibrasi</b></td>
-                  <td><?php echo format_rekalibrasi($kalibrasi_ulang); ?></td>
+                  <td><?php if($kalibrasi_ulang=='0000-00-00'){
+                    echo '-';
+                    }else{
+                    echo format_rekalibrasi($kalibrasi_ulang);
+                    } ?>
+                  </td>
               </tr>
               <tr>
                   <td><b>Keterangan</b></td>

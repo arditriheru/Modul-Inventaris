@@ -32,6 +32,16 @@
         <div class="row">
           <div class="col-lg-12">
           <div class="table-responsive">
+            <div class="col-lg-8">
+            <form method="post" action="export-inventaris" role="form">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input class="form-control" type="hidden" name="kode_ruangan" value="<?php echo $kode_ruangan?>">
+                    </div>
+                  <button type="submit" class="btn btn-success">EXPORT</button><br><br>
+                  </div>
+              </form>
+            </div>
             <table class="table table-bordered table-hover table-striped tablesorter">
                 <thead>
                     <tr>
@@ -39,7 +49,7 @@
                     <th><center>Nomor Inventaris</th>
                     <th><center>Nama Barang</th>
                     <th><center>Jenis</th>
-                    <th><center>Lokasi</th>
+                    <th><center>Ruangan</th>
                     <th><center>Pengadaan</th>
                     <th><center>Kondisi</th>
                     <th><center>Action</th>
