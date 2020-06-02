@@ -23,7 +23,7 @@
             <h1>Jumlah <small> <?php echo $total;}?> Barang</small></h1>
             <ol class="breadcrumb">
               <li><a href="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-              <li><a href="booking-filter"><i class="fa fa-search"></i> Cari</a></li>
+              <li><a href="inventaris-filter"><i class="fa fa-search"></i> Cari</a></li>
               <li class="active"><i class="fa fa-list"></i> List</li>
             </ol>  
             <?php include "../notifikasi1.php"?>
