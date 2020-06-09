@@ -175,8 +175,8 @@
               </div>
               <div class="form-group">
                 <label>Pengadaan</label>
-                <input class="form-control" type="text" name="tanggal_pengadaan"
-                value="<?php echo format_pengadaan($tanggal_pengadaan); ?>" readonly>
+                <input class="form-control" type="date" name="tanggal_pengadaan"
+                value="<?php echo format_pengadaan($tanggal_pengadaan); ?>">
               </div>
               <div class="form-group">
                 <label>Kondisi</label>
@@ -188,8 +188,11 @@
               </div>
               <div class="form-group">
                 <label>Status</label>
-                <input class="form-control" type="text" name="tanggal_pengadaan"
-                value="<?php echo $d['ifstatus']; ?>" readonly>
+               <select class="form-control" type="text" name="status">
+                  <option value='<?php echo $d['status']; ?>'selected><?php echo $d['ifstatus']; ?></option>
+                  <option value='1'>Baru</option>
+                  <option value='0'>Bekas</option>
+                </select>
               </div>
               <div class="form-group">
                 <label>Kalibrasi</label>

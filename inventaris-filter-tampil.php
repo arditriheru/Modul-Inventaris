@@ -68,7 +68,7 @@
                       WHERE inventaris.kode_jenis=inventaris_jenis.kode_jenis
                       AND inventaris.kode_ruangan=inventaris_ruangan.kode_ruangan
                       AND inventaris.kode_ruangan = '$kode_ruangan'
-                      ORDER BY inventaris.nama_barang ASC;");
+                      ORDER BY inventaris.kode_registrasi ASC;");
                     while($d = mysqli_fetch_array($data)){
                   ?>
                   <tr>
