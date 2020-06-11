@@ -29,63 +29,6 @@
             AND inventaris.kode_ruangan=inventaris_ruangan.kode_ruangan
             AND inventaris.kode_registrasi = '$kode_registrasi';");
           while($d = mysqli_fetch_array($data)){
-            $tanggal_pengadaan = $d['tanggal_pengadaan'];
-                  function format_pengadaan($tanggal_pengadaan)
-                    {
-                      $bulan = array (1 =>   'Januari',
-                            'Februari',
-                            'Maret',
-                            'April',
-                            'Mei',
-                            'Juni',
-                            'Juli',
-                            'Agustus',
-                            'September',
-                            'Oktober',
-                            'November',
-                            'Desember'
-                          );
-                      $split = explode('-', $tanggal_pengadaan);
-                      return $split[2] . ' ' . $bulan[ (int)$split[1] ] . ' ' . $split[0];
-                    }
-                  $tanggal_kalibrasi = $d['tanggal_kalibrasi'];
-                  function format_kalibrasi($tanggal_kalibrasi)
-                    {
-                      $bulan = array (1 =>   'Januari',
-                            'Februari',
-                            'Maret',
-                            'April',
-                            'Mei',
-                            'Juni',
-                            'Juli',
-                            'Agustus',
-                            'September',
-                            'Oktober',
-                            'November',
-                            'Desember'
-                          );
-                      $split = explode('-', $tanggal_kalibrasi);
-                      return $split[2] . ' ' . $bulan[ (int)$split[1] ] . ' ' . $split[0];
-                    }
-                  $kalibrasi_ulang = $d['kalibrasi_ulang'];
-                  function format_rekalibrasi($kalibrasi_ulang)
-                    {
-                      $bulan = array (1 =>   'Januari',
-                            'Februari',
-                            'Maret',
-                            'April',
-                            'Mei',
-                            'Juni',
-                            'Juli',
-                            'Agustus',
-                            'September',
-                            'Oktober',
-                            'November',
-                            'Desember'
-                          );
-                      $split = explode('-', $kalibrasi_ulang);
-                      return $split[2] . ' ' . $bulan[ (int)$split[1] ] . ' ' . $split[0];
-                    }
         ?>
         <?php
             if(isset($_POST['submit'])){
@@ -95,13 +38,14 @@
             $nama_barang        = $_POST['nama_barang'];
             $kode_jenis         = $_POST['kode_jenis'];
             $kode_ruangan       = $_POST['kode_ruangan'];
+            $tanggal_pengadaan  = $_POST['tanggal_pengadaan'];
             $kondisi            = $_POST['kondisi'];
             $status             = $_POST['status'];
             $tanggal_kalibrasi  = $_POST['tanggal_kalibrasi'];
             $kalibrasi_ulang    = $_POST['kalibrasi_ulang'];
             $keterangan         = $_POST['keterangan'];
             // menginput data ke database
-            $edit=mysqli_query($koneksi,"UPDATE inventaris SET nama_barang='$nama_barang',kode_jenis='$kode_jenis',kode_ruangan='$kode_ruangan',kondisi='$kondisi',status='$status',tanggal_kalibrasi='$tanggal_kalibrasi',kalibrasi_ulang='$kalibrasi_ulang'
+            $edit=mysqli_query($koneksi,"UPDATE inventaris SET nama_barang='$nama_barang',kode_jenis='$kode_jenis',kode_ruangan='$kode_ruangan', tanggal_pengadaan='$tanggal_pengadaan',kondisi='$kondisi',status='$status',tanggal_kalibrasi='$tanggal_kalibrasi',kalibrasi_ulang='$kalibrasi_ulang'
               ,keterangan='$keterangan'
               WHERE kode_registrasi='$kode_registrasi'");
             // mengalihkan halaman kembali ke index.php
@@ -176,7 +120,7 @@
               <div class="form-group">
                 <label>Pengadaan</label>
                 <input class="form-control" type="date" name="tanggal_pengadaan"
-                value="<?php echo format_pengadaan($tanggal_pengadaan); ?>">
+                value="<?php echo $d['tanggal_pengadaan']; ?>">
               </div>
               <div class="form-group">
                 <label>Kondisi</label>

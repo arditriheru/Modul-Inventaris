@@ -1,43 +1,9 @@
 <?php include "readme.php";?>
 <?php include "views/header.php"; ?>
 <?php 
-$kode_registrasi  = $_GET['id'];
-$nomor_inventaris = $_POST['nomor_inventaris'];
-?>
-    <nav>
-    <div id="wrapper">
-      <?php include "menu.php"; ?>
-        </div><!-- /.navbar-collapse -->
-      </nav>
-      <div id="page-wrapper">
-        <div class="row">
-          <div class="col-lg-12">
-            <h1>Detail <small>Inventaris</small></h1>
-            <ol class="breadcrumb">
-              <li><a href="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-              <li class="active"><i class="fa fa-flash"></i> Detail</li>
-            </ol>
-            <?php include "../notifikasi1.php"?>
-          </div>
-        </div><!-- /.row -->
-        <div class="row">
-          <div class="col-lg-6">
-          <div class="table-responsive">
-            <div clas="row">
-              <div class="col-lg-6">
-              <a href="inventaris-edit?id=<?php echo $kode_registrasi; ?>"
-              <button type="button" class="btn btn-primary">Edit</button>
-              </a>
-            </div>
-            <div align="right" class="col-lg-6">
-              <a href="inventaris-hapus?id=<?php echo $kode_registrasi; ?>"
-                onclick="javascript: return confirm('Anda yakin hapus?')">
-                <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
-              </a>
-            </div>
-            </div><br><br><br><!-- Row --->
-            <table class="table table-bordered table-hover table-striped tablesorter">
-              <?php 
+  $kode_registrasi  = $_GET['id'];
+  $nomor_inventaris = $_POST['nomor_inventaris'];
+
                   include '../koneksi.php';
                   if($kode_registrasi){
                     $data = mysqli_query($koneksi,
@@ -124,12 +90,13 @@ $nomor_inventaris = $_POST['nomor_inventaris'];
                       AND inventaris.kode_ruangan=inventaris_ruangan.kode_ruangan
                       AND inventaris.nomor_inventaris = '$nomor_inventaris';");
                   while($d = mysqli_fetch_array($data)){
+                    $kode_registrasi    = $d['kode_registrasi'];
                     $nomor_inventaris   = $d['nomor_inventaris'];
                     $nama_barang        = $d['nama_barang'];
                     $nama_jenis         = $d['nama_jenis'];
                     $nama_ruangan       = $d['nama_ruangan'];
-                    $kondisi          = $d['ifkondisi'];
-                    $status           = $d['ifstatus'];
+                    $kondisi            = $d['ifkondisi'];
+                    $status             = $d['ifstatus'];
                     $keterangan         = $d['keterangan'];
                     $tanggal_pengadaan  = $d['tanggal_pengadaan'];
                   function format_pengadaan($tanggal_pengadaan)
@@ -191,6 +158,39 @@ $nomor_inventaris = $_POST['nomor_inventaris'];
                   }
                 }
               ?>
+    <nav>
+    <div id="wrapper">
+      <?php include "menu.php"; ?>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+      <div id="page-wrapper">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>Detail <small>Inventaris</small></h1>
+            <ol class="breadcrumb">
+              <li><a href="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+              <li class="active"><i class="fa fa-flash"></i> Detail</li>
+            </ol>
+            <?php include "../notifikasi1.php"?>
+          </div>
+        </div><!-- /.row -->
+        <div class="row">
+          <div class="col-lg-6">
+          <div class="table-responsive">
+            <div clas="row">
+              <div class="col-lg-6">
+              <a href="inventaris-edit?id=<?php echo $kode_registrasi; ?>"
+              <button type="button" class="btn btn-primary">Edit</button>
+              </a>
+            </div>
+            <div align="right" class="col-lg-6">
+              <a href="inventaris-hapus?id=<?php echo $kode_registrasi; ?>"
+                onclick="javascript: return confirm('Anda yakin hapus?')">
+                <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+              </a>
+            </div>
+            </div><br><br><br><!-- Row --->
+            <table class="table table-bordered table-hover table-striped tablesorter">
               <tbody>
               <tr>
                   <td><b>Nomor Inventaris</b></td>
@@ -244,6 +244,9 @@ $nomor_inventaris = $_POST['nomor_inventaris'];
               </tr>
             </tbody>
             </table>
+            <a href="inventaris-tambah"
+              <button type="button" class="btn btn-success">Tambah</button>
+              </a>
             </div>
           </div>
         </div><!-- /.row -->
