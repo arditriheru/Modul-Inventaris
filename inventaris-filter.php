@@ -48,6 +48,38 @@
           </form>
             </div>
           </div>
+        </div><!-- /.row --><br><br>
+        <div class="row">
+          <div class="col-lg-12">
+          <div class="table-responsive">
+            <form method="post" action="kondisi-filter-tampil" role="form">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label>Kondisi</label>
+                <select class="form-control" type="text" name="kondisi">
+                  <option disabled selected>Pilih</option>
+                  <option value="1">Baik</option>
+                  <option value="0">Rusak</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-success">Cari</button>
+            </div>
+            </form>
+            <form method="post" action="status-filter-tampil" role="form">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label>Status</label>
+                <select class="form-control" type="text" name="status">
+                  <option disabled selected>Pilih</option>
+                  <option value="1">Baru</option>
+                  <option value="0">Bekas</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-success">Cari</button>
+            </div>
+            </form>
+            </div>
+          </div>
         </div><!-- /.row -->
       </div><br><br><?php include "../copyright.php";?><br><br><!-- /#page-wrapper -->
     </div><!-- /#wrapper -->

@@ -23,8 +23,8 @@
           </div>
         </div><!-- /.row -->
         <div class="row">
-            <?php include "d-status.php"?>
             <?php include "d-kondisi.php"?>
+            <?php include "d-status.php"?>
         </div><!-- /.row -->
 <br><br><?php include "../copyright.php";?>
       </div><!-- /#page-wrapper -->

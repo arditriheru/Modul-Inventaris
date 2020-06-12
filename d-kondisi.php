@@ -14,7 +14,7 @@
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
-        labels: ["Baru", "Bekas"],
+        labels: ["Baik", "Rusak"],
         datasets: [{
           label: '',
           data: [

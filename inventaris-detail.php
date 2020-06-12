@@ -178,12 +178,15 @@
           <div class="col-lg-6">
           <div class="table-responsive">
             <div clas="row">
-              <div class="col-lg-6">
+              <div class="col-lg-4">
+              <a href="inventaris-tambah"
+              <button type="button" class="btn btn-success">Tambah Baru</button>
+              </a>
+            </div>
+            <div align="right" class="col-lg-8">
               <a href="inventaris-edit?id=<?php echo $kode_registrasi; ?>"
               <button type="button" class="btn btn-primary">Edit</button>
               </a>
-            </div>
-            <div align="right" class="col-lg-6">
               <a href="inventaris-hapus?id=<?php echo $kode_registrasi; ?>"
                 onclick="javascript: return confirm('Anda yakin hapus?')">
                 <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
@@ -244,9 +247,6 @@
               </tr>
             </tbody>
             </table>
-            <a href="inventaris-tambah"
-              <button type="button" class="btn btn-success">Tambah</button>
-              </a>
             </div>
           </div>
         </div><!-- /.row -->
