@@ -19,38 +19,38 @@
 		<a href="../">Kembali</a>
 	</div>
 	<?php
-		if (isset($_POST['login'])){
-			$username = $_POST['username'];
-			$password = $_POST['password'];
+	if (isset($_POST['login'])){
+		$username = $_POST['username'];
+		$password = $_POST['password'];
 
-			if($username == 'psrs.rskiarachmi@gmail.com' && $password == 'wachidhasyim47'){
-				$_SESSION['username'] = $username;
-				echo "<script>
-                    setTimeout(function() {
-                        swal({
-                            title: 'Uyeah!!',
-                            text: 'Berhasil Login',
-                            type: 'success'
-                        }, function() {
-                            window.location = 'dashboard';
-                        });
-                    }, 10);
-                </script>";
-			}else{
-				 echo "<script>
-                    setTimeout(function() {
-                        swal({
-                            title: 'Tetot!!',
-                            text: 'Username atau Password Salah!',
-                            type: 'error'
-                        }, function() {
-                            window.location = 'login';
-                        });
-                    }, 10);
-                </script>";
-			}
-		}
-	?>
-	<script src="../js/sweetalert.min.js"></script>
-</body>
-</html>
+		if($username == 'psrs.rskiarachmi@gmail.com' && $password == 'wachidhasyim47'){
+			$_SESSION['username'] = $username;
+			echo "<script>
+			setTimeout(function() {
+				swal({
+					title: 'Uyeah!!',
+					text: 'Berhasil Login',
+					type: 'success'
+					}, function() {
+						window.location = 'dashboard';
+						});
+						}, 10);
+						</script>";
+					}else{
+						echo "<script>
+						setTimeout(function() {
+							swal({
+								title: 'Tetot!!',
+								text: 'Username atau Password Salah!',
+								type: 'error'
+								}, function() {
+									window.location = 'login';
+									});
+									}, 10);
+									</script>";
+								}
+							}
+							?>
+							<script src="../js/sweetalert.min.js"></script>
+						</body>
+						</html>
