@@ -220,7 +220,12 @@ if($kode_registrasi){
           </tr>
           <tr>
             <td><b>Pengadaan</b></td>
-            <td><?php echo format_pengadaan($tanggal_pengadaan); ?></td>
+            <td><?php 
+            if($tanggal_pengadaan=='0000-00-00'){
+              echo "-";
+            }else{
+              echo format_pengadaan($tanggal_pengadaan); } ?>
+            </td>
           </tr>
           <tr>
             <td><b>Kondisi</b></td>

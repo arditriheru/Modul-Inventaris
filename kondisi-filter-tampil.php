@@ -72,29 +72,34 @@ $kondisi = $_POST['kondisi'];
                               while($d = mysqli_fetch_array($data)){
                                 ?>
                                 <tr>
-                                  <td><center><?php echo $no++; ?></td>
-                                    <td><center><?php echo $d['nomor_inventaris']; ?></td>
-                                      <td><center><?php echo $d['nama_barang']; ?></td>
-                                        <td><center><?php echo $d['nama_jenis']; ?></td>
-                                          <td><center><?php echo $d['nama_ruangan']; ?></td>
-                                            <td><center><?php echo date("d/m/Y",strtotime($d['tanggal_pengadaan']));?></td>
-                                              <td><center><?php echo $d['kondisi']; ?></td>
-                                                <td>
-                                                  <div align="center">
-                                                    <a href="inventaris-detail?id=<?php echo $d['kode_registrasi']; ?>"
-                                                      <button type="button" class="btn btn-warning">Detail</a><br><br>
-                                                      </div>
-                                                    </td>
-                                                  </tr>
-                                                  <?php 
-                                                }
-                                                ?>
-                                              </tbody>
-                                            </table>
-                                          </div>
+                                  <td><center><?php echo $no++; ?></center></td>
+                                  <td><center><?php echo $d['nomor_inventaris']; ?></center></td>
+                                  <td><center><?php echo $d['nama_barang']; ?></center></td>
+                                  <td><center><?php echo $d['nama_jenis']; ?></center></td>
+                                  <td><center><?php echo $d['nama_ruangan']; ?></center></td>
+                                  <td><center><?php 
+                                  if($d['tanggal_pengadaan']=='0000-00-00'){
+                                    echo "-";
+                                  }else{
+                                    echo date("d/m/Y",strtotime($d['tanggal_pengadaan']));
+                                  } ?></center></td>
+                                  <td><center><?php echo $d['kondisi']; ?></center></td>
+                                  <td>
+                                    <div align="center">
+                                      <a href="inventaris-detail?id=<?php echo $d['kode_registrasi']; ?>"
+                                        <button type="button" class="btn btn-warning">Detail</a><br><br>
                                         </div>
-                                      </div><!-- /.row -->
-                                      <br><br><?php include "../copyright.php";?>
-                                    </div><!-- /#page-wrapper -->
-                                  </div><!-- /#wrapper -->
-                                  <?php include "views/footer.php"; ?>
+                                      </td>
+                                    </tr>
+                                    <?php 
+                                  }
+                                  ?>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div><!-- /.row -->
+                        <br><br><?php include "../copyright.php";?>
+                      </div><!-- /#page-wrapper -->
+                    </div><!-- /#wrapper -->
+                    <?php include "views/footer.php"; ?>
